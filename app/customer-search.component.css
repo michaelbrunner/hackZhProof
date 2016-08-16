@@ -1,0 +1,64 @@
+.movies {
+    width: 100%;
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+/* default for small phones */
+.movies .title {
+    width: 100%;
+    padding-right: 4px;
+}
+
+.movies .year {
+    width: 100%;
+    float: none;
+}
+
+.movies .type {
+    width: 100%;
+    float: none;
+}
+
+@media screen and (min-width: 320px) {
+    /* For tablets: */
+    .movies .title {
+        width: 100%;
+    }
+
+    .movies .year {
+        width: 50%;
+        float: left;
+    }
+
+    .movies .type {
+        width: 50%;
+        float: right;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    /* For desktop: */
+    .movies .title {
+        float: left;
+        width: 66.66%;
+    }
+
+    .movies .year {
+        float: left;
+        width: 16.66%;
+    }
+
+    .movies .type {
+        float: right;
+        width: 16.66%;
+    }
+}
+
+.selected {
+    background-color: #CFD8DC !important;
+    color: white;
+}

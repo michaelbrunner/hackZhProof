@@ -1,0 +1,15 @@
+<nav>
+    <a routerLink="/customersearch">Customer Search</a>
+</nav>
+<div *ngIf="favorites">
+    <ul class="list-group">
+        <div *ngFor="let favorite of favorites">
+            <li class="list-group-item">
+                <favorite-item [favorite]="favorite"></favorite-item>
+            </li>
+        </div>
+    </ul>
+</div>
+<div *ngIf="favorites == undefined">
+    <strong>No favorites found</strong>
+</div>

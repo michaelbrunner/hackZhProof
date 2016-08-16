@@ -1,0 +1,34 @@
+<html>
+
+    <head>
+        <base href="/">
+        <title>myHackzuerichapp</title>
+
+        <!-- 1. Load libraries -->
+        <!-- Polyfill(s) for older browsers -->
+        <!--POLYFILLS-->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+        <!-- 2. Configure SystemJS -->
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('app').catch(function (err) {
+                console.error(err);
+            });
+        </script>
+        <link rel="stylesheet" href="styles.css">
+        <link href='node_modules/bootstrap/dist/css/bootstrap.css' rel='stylesheet'>
+    </head>
+
+
+    <!-- 3. Display the application -->
+    <body>
+        <my-app>Loading...</my-app>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src='node_modules/bootstrap/dist/js/bootstrap.js'></script>
+    </body>
+
+</html>

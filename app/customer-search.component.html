@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="form-group">
+        <label for="nameSearch">Search by Name</label>
+        <input id="nameSearch" [(ngModel)]="searchParam" placeholder="Name..." class="form-control"/>
+        <button (click)="search()" class="btn btn-default">Search</button>
+    </div>
+
+
+    <div *ngIf="customers">
+        <h2>Customers</h2>
+        <div *ngFor="let customer of customers" (click)="gotoDetail(customer)">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2">{{customer.givenName}}</div>
+                    <div class="col-md-2">{{customer.surname}}</div>
+                    <div class="col-md-4">{{customer.streetAddress}}</div>
+                    <div class="col-md-1">{{customer.zipCode}}</div>
+                    <div class="col-md-2">{{customer.city}}</div>
+                    <div class="col-md-1">{{customer.id}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
