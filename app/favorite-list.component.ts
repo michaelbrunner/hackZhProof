@@ -25,9 +25,6 @@ export class FavoriteListComponent implements OnInit{
             }
 
         });
-
-
-
         console.log(this.favorites);
     }
 

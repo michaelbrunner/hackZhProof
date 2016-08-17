@@ -8,6 +8,9 @@ export class CustomerService {
     //https://hackzurich16.azurewebsites.net/axa/customers/search/byName/$searchParam
     private customerBaseUrl = 'https://hackzurich16.azurewebsites.net/axa/customers/search/byName/';
 
+    //https://hackzurich16.azurewebsites.net/axa/customers/search/near/46.731947,6.962926,1000
+    private geosearchBaseUrl = 'https://hackzurich16.azurewebsites.net/axa/customers/search/near/';
+
     constructor(private http: Http) { }
 
     searchCustomerByName(searchParam: string) {
@@ -16,6 +19,15 @@ export class CustomerService {
         this.http.get(requestUrl)
                  .subscribe(response => s.next(<Customer[]>response.json().data),
                             error => s.error(error));
+        return s;
+    }
+
+    searchCustomerByCoordinates(longitude: string, latitude: string, radius: string) {
+        let s = new Subject<Customer[]>();
+        let requestUrl = this.geosearchBaseUrl + longitude + "," + latitude + "," + radius;
+        this.http.get(requestUrl)
+            .subscribe(response => s.next(<Customer[]>response.json().data),
+                error => s.error(error));
         return s;
     }
 

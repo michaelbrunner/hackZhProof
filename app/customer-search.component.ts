@@ -14,11 +14,19 @@ export class CustomerSearchComponent {
     customers: Customer[];
     error: any;
     searchParam: string;
+    longitudeParam: string;
+    latitudeParam: string;
+    radiusParam: string;
 
     constructor(private router: Router, private customerService: CustomerService) { };
 
     search() {
         this.customerService.searchCustomerByName(this.searchParam).subscribe(customers => this.customers= customers);
+        console.log(this.customers);
+    }
+
+    geoSearch() {
+        this.customerService.searchCustomerByCoordinates(this.longitudeParam, this.latitudeParam, this.radiusParam).subscribe(customers => this.customers= customers);
         console.log(this.customers);
     }
 
