@@ -1,0 +1,48 @@
+<div class="container">
+    <nav>
+        <a routerLink="/customersearch">Customer Search</a>
+    </nav>
+
+    <div class="form-group">
+        <div class="strong">Geo Search </div>
+        <label for="longitude">Longitude</label>
+        <input id="longitude" [(ngModel)]="longitudeParam" placeholder="Longitude in decimal format" class="form-control"/>
+        <label for="latitude">Latitude</label>
+        <input id="latitude" [(ngModel)]="latitudeParam" placeholder="Latitude in decimal format" class="form-control"/>
+        <label for="radius">Radius</label>
+        <input id="radius" [(ngModel)]="radiusParam" placeholder="Radius in meter" class="form-control"/>
+        <button (click)="geoSearch()" class="btn btn-default">Search</button>
+    </div>
+
+    <div>
+        <sebm-google-map [latitude]="lat" [longitude]="lng">
+            <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+        </sebm-google-map>
+
+
+        <!-- integrate google map
+        <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" bounds="map.bounds">
+            <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'">
+            </ui-gmap-markers>
+        </ui-gmap-google-map>
+         -->
+    </div>
+<!--
+    <ui-gmap-google-map center="map.center"
+                        zoom="map.zoom" draggable="true" options="map.options"
+                        events="map.events">
+        <ui-gmap-markers ng-if="map.showMarkers"
+                         doCluster="map.doCluster"
+                         models="searchResults.results"
+                         coords="'coords'"
+                         idkey="'key'"
+                         chunk="200"
+        ></ui-gmap-markers>
+    </ui-gmap-google-map>
+
+    Marker: {"id":1,"latitude":45,"longitude":-74,"showWindow":true,"options":{"animation":1,"labelContent":"Markers id 1","labelAnchor":"22 0","labelClass":"marker-labels"}}
+    Marker: {"id":2,"latitude":15,"longitude":30,"showWindow":false}
+    Marker: {"id":3,"icon":"assets/images/plane.png","latitude":37,"longitude":-122,"showWindow":true,"title":"Plane","options":{"labelContent":"Markers id 3","labelAnchor":"26 0","labelClass":"marker-labels"}}
+-->
+
+</div>

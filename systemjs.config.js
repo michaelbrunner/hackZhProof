@@ -7,13 +7,18 @@
     var map = {
         'app': 'app', // 'dist',
         '@angular': 'node_modules/@angular',
-        'rxjs': 'node_modules/rxjs' // added this map section
+        'rxjs': 'node_modules/rxjs', // added this map section
+        'angular2-google-maps': 'node_modules/angular2-google-maps'
     };
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app':                        { main: 'main.js',  defaultExtension: 'js' },
         'rxjs':                       { defaultExtension: 'js' },
         'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+        'angular2-google-maps/core': {
+            defaultExtension: 'js',
+            main: 'index.js' // you can also use core.umd.js here, if you want faster loads
+        }
     };
     var ngPackageNames = [
         'common',

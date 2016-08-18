@@ -8,7 +8,8 @@ import { FavoriteItemComponent } from "./favorite-item.component";
 import { FavoriteListComponent } from "./favorite-list.component";
 import { routing } from './app.routing';
 import { HttpModule } from "@angular/http";
-import {FavoriteService} from "./favorite.service";
+import { FavoriteService } from "./favorite.service";
+import { GOOGLE_MAPS_PROVIDERS } from 'angular2-google-maps/core';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import {FavoriteService} from "./favorite.service";
     ],
     providers: [
         CustomerService,
-        FavoriteService
+        FavoriteService,
+        GOOGLE_MAPS_PROVIDERS
     ],
     bootstrap: [ AppComponent ]
 })
